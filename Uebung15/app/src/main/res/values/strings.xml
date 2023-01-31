@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Uebung15</string>
+    <string name="rest_call">REST Call</string>
+    <string name="no_results_yet">no results yet</string>
 </resources>

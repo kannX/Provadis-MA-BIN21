@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView);
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         try {
             httpCache = HttpResponseCache.install(getCacheDir(), 10000000L);
         } catch (IOException e) {
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickButtonCall(View v) {
-        Log.d(TAG, "starting GithubTask");
+        Log.d(TAG, "starting GithubTask");W
         new GithubTask().execute();
     }
 
@@ -79,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     return null;
                 }
 
-                BufferedReader reader = new BufferedReader(new InputStreamReader(githubConnection.getInputStream()));
+                BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(githubConnection.getInputStream()));
                 StringBuilder stringBuilder = new StringBuilder();
                 for(String line; (line = reader.readLine()) != null;)
                     stringBuilder.append(line).append('\n');
